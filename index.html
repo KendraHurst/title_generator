@@ -21,7 +21,7 @@
 		<li>City: <input type="text" id="city"></li>
 		<li>State: <input type="text" id="state"></li>
 		<li>Zip Code: <input type="text" id="zip-code"></li>
-		<li>Title Length: <input type="number" id="title-length" min="50" max="75"></li>
+		<li>Max Title Length: <input type="number" id="title-length" min="50" max="75"></li>
 	</ul>
 
 	<button id="tag-button">Generate Title Tag</button>
@@ -40,14 +40,34 @@
 		if (propertyType === "apartments") {
 
 			const titleEnds = [" Apartments | Apartments for rent in ", " | Apartments for rent in ", " | Apartments in ", " Apartments in ", " Apartments "];
+			let i = 0;
 			let homepageTag = function() {
-				let homepageDiv = document.getElementById('homepage-title');
-				let propertyName = document.getElementById('property-name').value; 
-				let city = document.getElementById('city').value; 
-				let state = document.getElementById('state').value;
-				let zipCode = document.getElementById('zip-code').value;
-				let titleLength = document.getElementById('title-length').value;
-				homepageDiv.innerHTML = propertyName.concat(titleEnds[1],city,', ',state,', ',zipCode);
+				while (i <= titleEnds.length) {
+					let homepageDiv = document.getElementById('homepage-title');
+					let propertyName = document.getElementById('property-name').value; 
+					let city = document.getElementById('city').value; 
+					let state = document.getElementById('state').value;
+					let zipCode = document.getElementById('zip-code').value;
+					let titleLength = document.getElementById('title-length').value;
+					let homepageTitle = propertyName.concat(titleEnds[i],city,', ',state,', ',zipCode);
+					if (homepageTitle.length <= titleLength) { 
+						homepageDiv.innerHTML = homepageTitle;
+						break;
+					}
+				 	else {
+						let homepageTitle = propertyName.concat(titleEnds[i],city,', ',state);
+						if (homepageTitle.length <= titleLength) {
+							homepageDiv.innerHTML = homepageTitle;
+							break;
+						}
+						else if (i === titleEnds.length) {
+							homepageDiv.innerHTML = "ERROR: inputs too long to create title shorter than max title length. Refresh page and try again.";
+							break;
+						} else {
+							i++
+						};
+					};
+				};
 			};
 			tagButton.addEventListener('click',homepageTag);
 		}
