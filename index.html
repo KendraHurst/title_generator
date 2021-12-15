@@ -4,24 +4,19 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Create Your Title Tag</title>
-	<meta name="description" content="Create a Title Tag for your Apartment Website.">
-	<meta name="author" content="SitePoint">
-
-	<meta property="og:title" content="A Basic HTML5 Template">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-	<meta property="og:description" content="Create a title tag for your new apartment website.">
-	<meta property="og:image" content="image.png">
-
 	<link rel="icon" href="/favicon.ico">
-
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 	<h1>Create a Title Tag</h1>
 
 	<ul>
-		<li>Property Type (Apartment, Townhome, etc.): <input type="text" id="property-type"></li>
+		<li>Property Type (Apartment, Townhome, etc.): 
+			<select type="text" id="property-type">
+				<option value="apartments" selected>Apartments</option>
+				<option value="townhomes">Townhomes</option>
+			</select>
+		</li>
 		<li>Property Name: <input type="text" id="property-name"></li>
 		<li>City: <input type="text" id="city"></li>
 		<li>State: <input type="text" id="state"></li>
@@ -36,8 +31,7 @@
 	<span id="gallery-title"></span></p>
 	<p>Amenities: 
 	<span id="amenities-title"></span></p>
-	<script>
-
+	<script src="scripts.js">
 	</script>
 </body>
 </html>
