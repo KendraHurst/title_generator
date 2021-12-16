@@ -40,9 +40,8 @@
 		if (propertyType === "apartments") {
 
 			const titleEnds = [" Apartments | Apartments for rent in ", " | Apartments for rent in ", " | Apartments in ", " Apartments in ", " Apartments "];
-			let i = 0;
 			let homepageTag = function() {
-				while (i <= titleEnds.length) {
+				for (let i = 0; i <= titleEnds.length; i++) {
 					let homepageDiv = document.getElementById('homepage-title');
 					let propertyName = document.getElementById('property-name').value; 
 					let city = document.getElementById('city').value; 
@@ -61,10 +60,8 @@
 							break;
 						}
 						else if (i === titleEnds.length) {
-							homepageDiv.innerHTML = "ERROR: inputs too long to create title shorter than max title length. Refresh page and try again.";
+							homepageDiv.innerHTML = "ERROR: inputs too long to create title shorter than max title length.";
 							break;
-						} else {
-							i++
 						};
 					};
 				};
