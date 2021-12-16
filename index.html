@@ -12,9 +12,9 @@
 
 	<ul>
 		<li>Property Type: 
-			<select type="text" id="property-type">
-				<option value="apartments" selected>Apartments</option>
-				<option value="townhomes">Townhomes</option>
+			<select id="property-type">
+				<option value="Apartments">Apartments</option>
+				<option value="Townhomes">Townhomes</option>
 			</select>
 		</li>
 		<li>Property Name: <input type="text" id="property-name"></li>
@@ -37,9 +37,7 @@
 		let tagButton = document.getElementById('tag-button');
 		let propertyType = document.getElementById('property-type').value;
 
-		if (propertyType === "apartments") {
-
-			const titleEnds = [" Apartments | Apartments for rent in ", " | Apartments for rent in ", " | Apartments in ", " Apartments in ", " Apartments "];
+			const titleEnds = [` ${propertyType} | ${propertyType} for rent in `, ` | ${propertyType} for rent in `, ` | ${propertyType} in `, ` ${propertyType} in `, ` ${propertyType} `];
 			let homepageTag = function() {
 				for (let i = 0; i <= titleEnds.length; i++) {
 					let homepageDiv = document.getElementById('homepage-title');
@@ -67,16 +65,6 @@
 				};
 			};
 			tagButton.addEventListener('click',homepageTag);
-		}
-
-		else if (propertyType === "townhomes") {
-
-			const titleEnds = [" Townhomes | Townhomes for rent in ", " | Townhomes for rent in ", " | Townhomes in ", " Townhomes in ", " Townhomes "];
-				}	
-
-		else {
-
-		};
 
 		</script>
 	</body>
