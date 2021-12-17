@@ -27,19 +27,62 @@
 	<button id="tag-button">Generate Title Tag</button>
 
 	<p>Homepage: 
-	<span id="homepage-title"></span></p>
+	<span id="title-0"></span></p>
 	<p>Gallery: 
-	<span id="gallery-title"></span></p>
+	<span id="title-1"></span></p>
 	<p>Amenities: 
-	<span id="amenities-title"></span></p>
+	<span id="title-2"></span></p>
+	<p>Floor Plans: 
+	<span id="title-3"></span></p>
+	<p>Neighborhood: 
+	<span id="title-4"></span></p>
+	<p>Contact: 
+	<span id="title-5"></span></p>
+	<p>Schedule a Tour: 
+	<span id="title-6"></span></p>
+	<p>Apply Online: 
+	<span id="title-7"></span></p>
+	<p>Virtual Tours: 
+	<span id="title-8"></span></p>
+	<p>Pet Friendly: 
+	<span id="title-9"></span></p>
+	<p>Directions: 
+	<span id="title-10"></span></p>
+	<p>FAQ: 
+	<span id="title-11"></span></p>
+	<p>Availability: 
+	<span id="title-12"></span></p>
+	<p>Reviews: 
+	<span id="title-13"></span></p>
+	<p>Resident Portal: 
+	<span id="title-14"></span></p>
+	<p>Reset Password: 
+	<span id="title-15"></span></p>
+	<p>Find UserID: 
+	<span id="title-16"></span></p>
+	<p>Privacy Policy: 
+	<span id="title-17"></span></p>
+	<p>Accessibility Statement: 
+	<span id="title-18"></span></p>
+	<span id="title-19"></span></p>
+	<p>Terms: 
+	<span id="title-20"></span></p>
+	<p>CA Privacy Notice:
+	<span id="title-21"></span></p>
+	<p>Virtual Leasing: 
+	<span id="title-22"></span></p>
+	<p>COVID-19 FAQ: 
+	<span id="title-23"></span></p>
 	<script>
 
 		let tagButton = document.getElementById('tag-button');
 		let propertyType = document.getElementById('property-type').value;
 
-			const titleEnds = [` ${propertyType} | ${propertyType} for rent in `, ` | ${propertyType} for rent in `, ` | ${propertyType} in `, ` ${propertyType} in `, ` ${propertyType} `];
-			let homepageTag = function() {
-				for (let i = 0; i <= titleEnds.length; i++) {
+		const titleEnds = [` ${propertyType} | ${propertyType} for rent in `, ` | ${propertyType} for rent in `, ` | ${propertyType} in `, ` ${propertyType} in `, ` ${propertyType} `];
+		const pageTypes = ["","Photos","Amenities","Floor Plans","Neighborhood","Contact","Schedule a Tour","Apply Online","Virtual Tours","Pet Friendly","Directions","FAQ","Availability","Reviews","Resident Portal","Reset Password","Find UserID","Privacy Policy","Accessibility Statement","Accessibility","Terms","CA Privacy Notice","Virtual Leasing","COVID-19 FAQ"];
+		let homepageTag = function() {
+			for (let k = 0; i < pageTypes.length; k++) {
+				for (let i = 0; i < titleEnds.length; i++) {
 					let homepageDiv = document.getElementById('homepage-title');
 					let propertyName = document.getElementById('property-name').value; 
 					let city = document.getElementById('city').value; 
@@ -51,7 +94,7 @@
 						homepageDiv.innerHTML = homepageTitle;
 						break;
 					}
-				 	else {
+					else {
 						let homepageTitle = propertyName.concat(titleEnds[i],city,', ',state);
 						if (homepageTitle.length <= titleLength) {
 							homepageDiv.innerHTML = homepageTitle;
@@ -64,7 +107,8 @@
 					};
 				};
 			};
-			tagButton.addEventListener('click',homepageTag);
+		};
+		tagButton.addEventListener('click',homepageTag);
 
 		</script>
 	</body>
