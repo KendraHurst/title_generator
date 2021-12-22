@@ -26,9 +26,9 @@
 
 	<button id="tag-button">Generate Title Tag</button>
 
-	<p>Homepage: 
+	<p><b>Homepage:</b> 
 	<span id="title-0"></span></p>
-	<p>Gallery: 
+	<p><b>Gallery:</b> 
 	<span id="title-1"></span></p>
 	<p>Amenities: 
 	<span id="title-2"></span></p>
@@ -80,35 +80,35 @@
 
 		const titleEnds = [` ${propertyType} | ${propertyType} for rent in `, ` | ${propertyType} for rent in `, ` | ${propertyType} in `, ` ${propertyType} in `, ` ${propertyType} `];
 		const pageTypes = ["","Photos","Amenities","Floor Plans","Neighborhood","Contact","Schedule a Tour","Apply Online","Virtual Tours","Pet Friendly","Directions","FAQ","Availability","Reviews","Resident Portal","Reset Password","Find UserID","Privacy Policy","Accessibility Statement","Accessibility","Terms","CA Privacy Notice","Virtual Leasing","COVID-19 FAQ"];
-		let homepageTag = function() {
-			for (let k = 0; i < pageTypes.length; k++) {
-				for (let i = 0; i < titleEnds.length; i++) {
-					let homepageDiv = document.getElementById('homepage-title');
+		for (let k = 0; k <= pageTypes.length; k++) {
+			let homepageTag = function() {
+				for (let i = 0; i <= titleEnds.length; i++) {
+					let titleDiv = document.getElementById(`title-${k}`);
 					let propertyName = document.getElementById('property-name').value; 
 					let city = document.getElementById('city').value; 
 					let state = document.getElementById('state').value;
 					let zipCode = document.getElementById('zip-code').value;
 					let titleLength = document.getElementById('title-length').value;
-					let homepageTitle = propertyName.concat(titleEnds[i],city,', ',state,', ',zipCode);
-					if (homepageTitle.length <= titleLength) { 
-						homepageDiv.innerHTML = homepageTitle;
+					let pageTitle = pageTypes[k].concat(' | ',propertyName,titleEnds[i],city,', ',state,', ',zipCode);
+					if (pageTitle.length <= titleLength) { 
+						titleDiv.innerHTML = pageTitle;
 						break;
 					}
 					else {
-						let homepageTitle = propertyName.concat(titleEnds[i],city,', ',state);
-						if (homepageTitle.length <= titleLength) {
-							homepageDiv.innerHTML = homepageTitle;
+						let pageTitle = pageTypes[k].concat(' | ',propertyName,titleEnds[i],city,', ',state);
+						if (pageTitle.length <= titleLength) {
+							titleDiv.innerHTML = pageTitle;
 							break;
 						}
 						else if (i === titleEnds.length) {
-							homepageDiv.innerHTML = "ERROR: inputs too long to create title shorter than max title length.";
+							titleDiv.innerHTML = "ERROR: inputs too long to create title shorter than max title length.";
 							break;
 						};
 					};
 				};
 			};
+			tagButton.addEventListener('click',homepageTag);
 		};
-		tagButton.addEventListener('click',homepageTag);
 
 		</script>
 	</body>
