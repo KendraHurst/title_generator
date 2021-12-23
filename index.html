@@ -4,8 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Create Your Title Tag</title>
-	<link rel="icon" href="/favicon.ico">
-	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 	<h1>Create a Title Tag</h1>
@@ -30,53 +28,56 @@
 	<span id="title-0"></span></p>
 	<p><b>Gallery:</b> 
 	<span id="title-1"></span></p>
-	<p>Amenities: 
+	<p><b>Amenities:</b> 
 	<span id="title-2"></span></p>
-	<p>Floor Plans: 
+	<p><b>Floor Plans:</b> 
 	<span id="title-3"></span></p>
-	<p>Neighborhood: 
+	<p><b>Neighborhood:</b> 
 	<span id="title-4"></span></p>
-	<p>Contact: 
+	<p><b>Contact:</b> 
 	<span id="title-5"></span></p>
-	<p>Schedule a Tour: 
+	<p><b>Schedule a Tour:</b> 
 	<span id="title-6"></span></p>
-	<p>Apply Online: 
+	<p><b>Apply Online:</b> 
 	<span id="title-7"></span></p>
-	<p>Virtual Tours: 
+	<p><b>Virtual Tours:</b> 
 	<span id="title-8"></span></p>
-	<p>Pet Friendly: 
+	<p><b>Pet Friendly:</b> 
 	<span id="title-9"></span></p>
-	<p>Directions: 
+	<p><b>Directions:</b> 
 	<span id="title-10"></span></p>
-	<p>FAQ: 
+	<p><b>FAQ:</b> 
 	<span id="title-11"></span></p>
-	<p>Availability: 
+	<p><b>Availability:</b> 
 	<span id="title-12"></span></p>
-	<p>Reviews: 
+	<p><b>Reviews:</b> 
 	<span id="title-13"></span></p>
-	<p>Resident Portal: 
+	<p><b>Resident Portal:</b> 
 	<span id="title-14"></span></p>
-	<p>Reset Password: 
+	<p><b>Reset Password:</b> 
 	<span id="title-15"></span></p>
-	<p>Find UserID: 
+	<p><b>Find UserID:</b> 
 	<span id="title-16"></span></p>
-	<p>Privacy Policy: 
+	<p><b>Privacy Policy:</b> 
 	<span id="title-17"></span></p>
-	<p>Accessibility Statement: 
+	<p><b>Accessibility Statement:</b> 
 	<span id="title-18"></span></p>
 	<span id="title-19"></span></p>
-	<p>Terms: 
+	<p><b>Terms:</b> 
 	<span id="title-20"></span></p>
-	<p>CA Privacy Notice:
+	<p><b>CA Privacy Notice:</b> 
 	<span id="title-21"></span></p>
-	<p>Virtual Leasing: 
+	<p><b>Virtual Leasing:</b> 
 	<span id="title-22"></span></p>
-	<p>COVID-19 FAQ: 
+	<p><b>COVID-19 FAQ:</b> 
 	<span id="title-23"></span></p>
 	<script>
 
 		let tagButton = document.getElementById('tag-button');
-		let propertyType = document.getElementById('property-type').value;
+		let selectType = document.getElementById('property-type');
+		selectType.addEventListener('change',findPropertyType);
+		function findPropertyType() {
+			let propertyType = selectType.value;
 
 		const titleEnds = [` ${propertyType} | ${propertyType} for rent in `, ` | ${propertyType} for rent in `, ` | ${propertyType} in `, ` ${propertyType} in `, ` ${propertyType} `];
 		const pageTypes = ["","Photos","Amenities","Floor Plans","Neighborhood","Contact","Schedule a Tour","Apply Online","Virtual Tours","Pet Friendly","Directions","FAQ","Availability","Reviews","Resident Portal","Reset Password","Find UserID","Privacy Policy","Accessibility Statement","Accessibility","Terms","CA Privacy Notice","Virtual Leasing","COVID-19 FAQ"];
@@ -108,6 +109,7 @@
 				};
 			};
 			tagButton.addEventListener('click',homepageTag);
+		};
 		};
 
 		</script>
