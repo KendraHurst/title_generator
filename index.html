@@ -74,49 +74,49 @@
 	<span id="title-23"></span></p>
 	<script>
 
+
 		let tagButton = document.getElementById('tag-button');
 		let selectType = document.getElementById('property-type');
 		selectType.addEventListener('change',findPropertyType);
 		function findPropertyType() {
 			let propertyType = selectType.value;
-
-		const titleEnds = [` ${propertyType} | ${propertyType} for rent in `, ` | ${propertyType} for rent in `, ` | ${propertyType} in `, ` ${propertyType} in `, ` ${propertyType} `];
-		const pageTypes = ["", "Photos", "Amenities", "Floor Plans", "Neighborhood", "Contact", "Schedule a Tour", "Apply Online", "Virtual Tours", "Pet Friendly", "Directions", "FAQ", "Availability", "Reviews", "Resident Portal", "Reset Password", "Find UserID", "Privacy Policy", "Accessibility Statement", "Accessibility", "Terms", "CA Privacy Notice", "Virtual Leasing", "COVID-19 FAQ"];
-		for (let k = 0; k < pageTypes.length; k++) {
-			let homepageTag = function() {
-				for (let i = 0; i < titleEnds.length; i++) {
-					let titleDiv = document.getElementById(`title-${k}`);
-					let propertyName = document.getElementById('property-name').value; 
-					let city = document.getElementById('city').value; 
-					let state = document.getElementById('state').value;
-					let zipCode = document.getElementById('zip-code').value;
-					let titleLength = document.getElementById('title-length').value;
-					let bar
-					if (k === 0) {
-						bar = "";
-					} else {
-						bar = " | ";
-					};
-					let pageTitle = pageTypes[k].concat(bar, propertyName, titleEnds[i], city, ', ', state, ', ', zipCode);
-					if (pageTitle.length <= titleLength) { 
-						titleDiv.innerHTML = pageTitle;
-						break;
-					}
-					else {
-						let pageTitle = pageTypes[k].concat(bar, propertyName, titleEnds[i], city, ', ', state);
-						if (pageTitle.length <= titleLength) {
+			const titleEnds = [` ${propertyType} | ${propertyType} for rent in `, ` | ${propertyType} for rent in `, ` | ${propertyType} in `, ` ${propertyType} in `, ` ${propertyType} `];
+			const pageTypes = ["", "Photos", "Amenities", "Floor Plans", "Neighborhood", "Contact", "Schedule a Tour", "Apply Online", "Virtual Tours", "Pet Friendly", "Directions", "FAQ", "Availability", "Reviews", "Resident Portal", "Reset Password", "Find UserID", "Privacy Policy", "Accessibility Statement", "Accessibility", "Terms", "CA Privacy Notice", "Virtual Leasing", "COVID-19 FAQ"];
+			for (let k = 0; k < pageTypes.length; k++) {
+				let homepageTag = function() {
+					for (let i = 0; i < titleEnds.length; i++) {
+						let titleDiv = document.getElementById(`title-${k}`);
+						let propertyName = document.getElementById('property-name').value; 
+						let city = document.getElementById('city').value; 
+						let state = document.getElementById('state').value;
+						let zipCode = document.getElementById('zip-code').value;
+						let titleLength = document.getElementById('title-length').value;
+						let bar
+						if (k === 0) {
+							bar = "";
+						} else {
+							bar = " | ";
+						};
+						let pageTitle = pageTypes[k].concat(bar, propertyName, titleEnds[i], city, ', ', state, ', ', zipCode);
+						if (pageTitle.length <= titleLength) { 
 							titleDiv.innerHTML = pageTitle;
 							break;
 						}
-						else if (i === titleEnds.length) {
-							titleDiv.innerHTML = "ERROR: inputs too long to create title shorter than max title length.";
-							break;
+						else {
+							let pageTitle = pageTypes[k].concat(bar, propertyName, titleEnds[i], city, ', ', state);
+							if (pageTitle.length <= titleLength) {
+								titleDiv.innerHTML = pageTitle;
+								break;
+							}
+							else if (i === titleEnds.length) {
+								titleDiv.innerHTML = "ERROR: inputs too long to create title shorter than max title length.";
+								break;
+							};
 						};
 					};
 				};
-			};
 			tagButton.addEventListener('click',homepageTag);
-		};
+			};
 		};
 
 		</script>
