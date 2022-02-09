@@ -11,8 +11,8 @@
 	<ul>
 		<li>Property Type: 
 			<select id="property-type">
-				<option value="Apartments">Apartments</option>
-				<option value="Townhomes">Townhomes</option>
+				<option value="Apartment">Apartments</option>
+				<option value="Townhome">Townhomes</option>
 			</select>
 		</li>
 		<li>Property Name: <input type="text" id="property-name"></li>
@@ -137,11 +137,13 @@
 			let zipCode = document.getElementById('zip-code').value;
 			let titleLength = document.getElementById('title-length').value;
 
-			const titleEnds = [` ${propertyType} | ${propertyType} for Rent in `, ` | ${propertyType} for Rent in `, ` | ${propertyType} in `, ` | ${propertyType} `];
+			const titleEnds = [` ${propertyType}s | ${propertyType}s for Rent in `, ` | ${propertyType}s for Rent in `, ` | ${propertyType}s in `, ` | ${propertyType}s `];
 
 			const pageTypes = ["", "Photos", "Amenities", "Floor Plans", "Neighborhood", "Contact", "Schedule a Tour", "Tours", "Apply Online", "Apply Now", "Virtual Tours", "Pet Friendly", "Directions", "FAQ", "Apartment Search", "Availability", "Reviews", "Resident Portal", "Residents", "Reset Password", "Find UserID", "Privacy Policy", "Accessibility Statement", "Accessibility", "Terms", "CA Privacy Notice", "Virtual Leasing", "COVID-19 FAQ"];
 
-			const descriptions = [];
+			const descriptions = [
+						`${propertyName} ${propertyType}s in ${city}, ${state} ${zipCode}. You will find your new ${propertyType} today! ${propertyName} offers ${propertyType} floor plans. Contact us Today!`
+			];
 
 			for (let j = 0; j < descriptions.length; j++) {
 				let descriptionDiv = document.getElementById(`description-${j}`);
