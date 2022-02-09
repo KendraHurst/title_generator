@@ -142,12 +142,15 @@
 			const pageTypes = ["", "Photos", "Amenities", "Floor Plans", "Neighborhood", "Contact", "Schedule a Tour", "Tours", "Apply Online", "Apply Now", "Virtual Tours", "Pet Friendly", "Directions", "FAQ", "Apartment Search", "Availability", "Reviews", "Resident Portal", "Residents", "Reset Password", "Find UserID", "Privacy Policy", "Accessibility Statement", "Accessibility", "Terms", "CA Privacy Notice", "Virtual Leasing", "COVID-19 FAQ"];
 
 			const descriptions = [
-						`${propertyName} ${propertyType}s in ${city}, ${state} ${zipCode}. You will find your new ${propertyType} today! ${propertyName} offers ${propertyType} floor plans. Contact us Today!`
+						`${propertyName} ${propertyType}s in ${city}, ${state} ${zipCode}. Find your new ${propertyType.toLowerCase()} today! We offer a variety of ${propertyType.toLowerCase()} floor plans. Contact us Today!`,
+						`Take a photo tour through your new ${city} ${propertyType.toLowerCase()}, and then schedule a tour with us today! See for yourself better living at ${propertyName}.`,
+						`Each of our ${city}, ${state} ${propertyType.toLowerCase()}s are outfitted with useful features. Check out all the amenities that will be available to you at ${propertyName}`
 			];
 
 			for (let j = 0; j < descriptions.length; j++) {
 				let descriptionDiv = document.getElementById(`description-${j}`);
 				descriptionDiv.innerHTML = descriptions[j];
+				console.log(descriptionDiv.innerHTML.length);
 			};
 
 			for (let k = 0; k < pageTypes.length; k++) {
