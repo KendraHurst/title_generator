@@ -22,7 +22,7 @@
 		<li>Max Title Length: <input type="number" id="title-length"></li>
 	</ul>
 
-	<button id="tag-button">Generate Title Tag</button>
+	<button id="content-button">Generate Content</button>
 
 	<p><b>Homepage:</b><p>
 	<p><span id="title-0"></span></p>
@@ -124,17 +124,18 @@
 	<script>
 
 
-		let tagButton = document.getElementById('tag-button');
-		let selectType = document.getElementById('property-type');
+		let contentButton = document.getElementById('content-button');
 
-		window.addEventListener('load',generateContent);
-		selectType.addEventListener('change',generateContent);
-
+		contentButton.addEventListener('click',generateContent);
 
 		function generateContent() {
 
-			let propertyType = selectType.value;
-
+			let propertyType = document.getElementById('property-type').value;
+			let propertyName = document.getElementById('property-name').value;
+			let city = document.getElementById('city').value;
+			let state = document.getElementById('state').value;
+			let zipCode = document.getElementById('zip-code').value;
+			let titleLength = document.getElementById('title-length').value;
 
 			const titleEnds = [` ${propertyType} | ${propertyType} for Rent in `, ` | ${propertyType} for Rent in `, ` | ${propertyType} in `, ` | ${propertyType} `];
 
@@ -143,50 +144,40 @@
 			const descriptions = [];
 
 			for (let j = 0; j < descriptions.length; j++) {
-				let createDescription = function() {
-					let descriptionDiv = document.getElementById(`description-${j}`);
-				};
+				let descriptionDiv = document.getElementById(`description-${j}`);
+				descriptionDiv.innerHTML = descriptions[j];
 			};
 
 			for (let k = 0; k < pageTypes.length; k++) {
 
-				let createTag = function() {
+				for (let i = 0; i < titleEnds.length; i++) {
 
-					for (let i = 0; i < titleEnds.length; i++) {
+					let titleDiv = document.getElementById(`title-${k}`);
+					let bar
+					if (k === 0) {
+						bar = "";
+					} else {
+						bar = " | ";
+					};
 
-						let titleDiv = document.getElementById(`title-${k}`);
-						let propertyName = document.getElementById('property-name').value;
-						let city = document.getElementById('city').value;
-						let state = document.getElementById('state').value;
-						let zipCode = document.getElementById('zip-code').value;
-						let titleLength = document.getElementById('title-length').value;
-						let bar
-						if (k === 0) {
-							bar = "";
-						} else {
-							bar = " | ";
-						};
+					let pageTitle = pageTypes[k].concat(bar, propertyName, titleEnds[i], city, ', ', state, ', ', zipCode);
 
-						let pageTitle = pageTypes[k].concat(bar, propertyName, titleEnds[i], city, ', ', state, ', ', zipCode);
+					if (pageTitle.length <= titleLength) {
+						titleDiv.innerHTML = pageTitle;
+						break;
+					} else {
+
+						let pageTitle = pageTypes[k].concat(bar, propertyName, titleEnds[i], city, ', ', state);
 
 						if (pageTitle.length <= titleLength) {
 							titleDiv.innerHTML = pageTitle;
 							break;
-						} else {
-
-							let pageTitle = pageTypes[k].concat(bar, propertyName, titleEnds[i], city, ', ', state);
-
-							if (pageTitle.length <= titleLength) {
-								titleDiv.innerHTML = pageTitle;
-								break;
-							} else if (i === titleEnds.length - 1) {
-								titleDiv.innerHTML = "ERROR: inputs too long to create title shorter than max title length.";
-								break;
-							};
+						} else if (i === titleEnds.length - 1) {
+							titleDiv.innerHTML = "ERROR: inputs too long to create title shorter than max title length.";
+							break;
 						};
 					};
 				};
-			tagButton.addEventListener('click',createTag);
 			};
 		};
 
