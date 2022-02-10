@@ -15,8 +15,8 @@
 				<option value="Townhome">Townhomes</option>
 			</select>
 		</li>
-		<li>Property Name: <input type="text" id="property-name"></li>
-		<li>City: <input type="text" id="city"></li>
+		<li>Property Name: <input type="text" id="property-name" maxlength="40"></li>
+		<li>City: <input type="text" id="city" maxlength="40"></li>
 		<li>State:
 			<select name="state" id="state">
 				  <option value="" selected="selected">Select a State</option>
@@ -73,9 +73,9 @@
 				  <option value="WY">Wyoming</option>
 			</select>
 		</li>
-		<li>Zip Code: <input type="text" id="zip-code"></li>
-		<li>Max Title Length: <input type="number" id="title-length"></li><br />
-		<li>Custom Title: <input type="text" id="custom-title"></li>
+		<li>Zip Code: <input type="text" id="zip-code" maxlength="5"></li>
+		<li>Max Title Length: <input type="number" id="title-length" max="100" min="0"></li><br />
+		<li>Custom Title: <input type="text" id="custom-title" maxlength="40"></li>
 	</ul>
 
 	<button id="content-button">Generate Content</button>
