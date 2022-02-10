@@ -20,6 +20,7 @@
 		<li>State: <input type="text" id="state"></li>
 		<li>Zip Code: <input type="text" id="zip-code"></li>
 		<li>Max Title Length: <input type="number" id="title-length"></li>
+		<li>Custom Title: <input type="text" id="custom-title"></li>
 	</ul>
 
 	<button id="content-button">Generate Content</button>
@@ -121,6 +122,9 @@
 	<p><span id="title-27"></span></p>
 	<p><span id="description-22"></span></p>
 
+	<p><b>Custom Title:</b></p>
+	<p><span id="title-28"></span></p>
+
 	<script>
 
 
@@ -136,15 +140,18 @@
 			let state = document.getElementById('state').value;
 			let zipCode = document.getElementById('zip-code').value;
 			let titleLength = document.getElementById('title-length').value;
+			let customTitle = document.getElementById('custom-title').value;
 
 			const titleEnds = [` ${propertyType}s | ${propertyType}s for Rent in `, ` | ${propertyType}s for Rent in `, ` | ${propertyType}s in `, ` | ${propertyType}s `];
 
-			const pageTypes = ["", "Photos", "Amenities", "Floor Plans", "Neighborhood", "Contact", "Schedule a Tour", "Tours", "Apply Online", "Apply Now", "Virtual Tours", "Pet Friendly", "Directions", "FAQ", "Apartment Search", "Availability", "Reviews", "Resident Portal", "Residents", "Reset Password", "Find UserID", "Privacy Policy", "Accessibility Statement", "Accessibility", "Terms", "CA Privacy Notice", "Virtual Leasing", "COVID-19 FAQ"];
+			const pageTypes = ["", "Photos", "Amenities", "Floor Plans", "Neighborhood", "Contact", "Schedule a Tour", "Tours", "Apply Online", "Apply Now", "Virtual Tours", "Pet Friendly", "Directions", "FAQ", "Apartment Search", "Availability", "Reviews", "Resident Portal", "Residents", "Reset Password", "Find UserID", "Privacy Policy", "Accessibility Statement", "Accessibility", "Terms", "CA Privacy Notice", "Virtual Leasing", "COVID-19 FAQ", `${customTitle}`];
 
 			const descriptions = [
-						`${propertyName} ${propertyType}s in ${city}, ${state} ${zipCode}. Find your new ${propertyType.toLowerCase()} today! We offer a variety of ${propertyType.toLowerCase()} floor plans. Contact us Today!`,
-						`Take a photo tour through your new ${city} ${propertyType.toLowerCase()}, and then schedule a tour with us today! See for yourself better living at ${propertyName}.`,
-						`Each of our ${city}, ${state} ${propertyType.toLowerCase()}s are outfitted with useful features. Check out all the amenities that will be available to you at ${propertyName}`
+				`${propertyName} ${propertyType}s in ${city}, ${state} ${zipCode}. Find your new ${propertyType.toLowerCase()} today! We offer a variety of ${propertyType.toLowerCase()} floor plans. Contact us Today!`,
+				`Take a photo tour through your new ${city} ${propertyType.toLowerCase()}, and then schedule a tour today! See for yourself better living at ${propertyName}.`,
+				`Each of our ${city}, ${state} ${propertyType.toLowerCase()}s are outfitted with useful features. Check out the amenities that will be available to you at ${propertyName}`,
+				`At [property] apartments in [city, state], you can choose from our apartment floorplans that are complete with everything you need.`,
+
 			];
 
 			for (let j = 0; j < descriptions.length; j++) {
