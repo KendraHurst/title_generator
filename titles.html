@@ -199,17 +199,32 @@
 
 			const titleEnds = [` ${propertyType}s | ${propertyType}s for Rent in `, ` | ${propertyType}s for Rent in `, ` | ${propertyType}s in `, ` | ${propertyType}s `];
 
-			const pageTypes = ["", "Photos", "Amenities", "Floor Plans", "Neighborhood", "Contact", "Schedule a Tour", "Tours", "Apply Online", "Apply Now", "Virtual Tours", "Pet Friendly", "Directions", "FAQ", "Apartment Search", "Availability", "Reviews", "Resident Portal", "Residents", "Reset Password", "Find UserID", "Privacy Policy", "Accessibility Statement", "Accessibility", "Terms", "CA Privacy Notice", "Virtual Leasing", "COVID-19 FAQ", `${customTitle}`];
+			const pageTypes = ["", "Photos", "Amenities", "Floor Plans", "Neighborhood", "Contact", "Schedule a Tour", "Tours", "Apply Online", "Apply Now", "Virtual Tours", "Pet Friendly", "Directions", "FAQ", `${propertyType} Search`, "Availability", "Reviews", "Resident Portal", "Residents", "Reset Password", "Find UserID", "Privacy Policy", "Accessibility Statement", "Accessibility", "Terms", "CA Privacy Notice", "Virtual Leasing", "COVID-19 FAQ", `${customTitle}`];
 
 			const descriptions = [
-				`${propertyName} ${propertyType}s in ${city}, ${state} ${zipCode}. Find your new ${propertyType.toLowerCase()} today! We offer a variety of ${propertyType.toLowerCase()} floor plans. Contact us Today!`,
+				`${propertyName} ${propertyType}s in ${city}, ${state} ${zipCode}. Find your new ${propertyType.toLowerCase()} today! We offer a variety of ${propertyType.toLowerCase()} floor plans. Contact us today!`,
 				`Take a photo tour through your new ${city} ${propertyType.toLowerCase()}, and then schedule a tour today! See for yourself better living at ${propertyName}.`,
-				`Each of our ${city}, ${state} ${propertyType.toLowerCase()}s are outfitted with useful features. Check out the amenities that will be available to you at ${propertyName}`,
+				`Our ${city}, ${state} ${propertyType.toLowerCase()}s are outfitted with a variety of features. Check out the amenities that will be available to you at ${propertyName}.`,
 				`At ${propertyName} ${propertyType}s in ${city}, ${state}, you can choose from our ${propertyType.toLowerCase()} floorplans that are complete with everything you need.`,
 				`Experience the best ${city}, ${state} has to offer. Come home to ${propertyName} ${propertyType}s and come home to better living. Contact us today!`,
 				`Interested in learning more about ${propertyName}? Submit the contact form with your questions. Our leasing consultants will contact you soon.`,
 				`Call or email us to schedule a tour of ${propertyName} today. Come see your new ${city} ${propertyType.toLowerCase()} and the community features in person.`,
-				`Apply now to ${propertyName}. Our ${city} ${propertyType.toLowerCase()}s provide you with everything that you need to be successful in your daily routine.`
+				`Apply now to ${propertyName}. Our ${city} ${propertyType.toLowerCase()}s provide you with everything that you need to be successful in your daily routine.`,
+				`Take a virtual ${propertyType.toLowerCase()} tour of ${propertyName} in ${city}, ${state}, and walk through one of our ${propertyType.toLowerCase()}s from the comfort of your own home!`,
+				`${propertyName} is not just a pet-friendly property, but a pet-enthusiastic property. Your pets will find just as inviting a home here as you will.`,
+				`Stop by and visit ${propertyName} today! Just type in your location and follow the directions to your future ${city} ${propertyType.toLowerCase()} community.`,
+				`Check out some of the frequently asked questions about ${propertyName} in ${city}, ${state}, then contact us about your future ${propertyType.toLowerCase()} today!`,
+				`Search through the available ${propertyType.toLowerCase()}s at ${propertyName} and find the perfect ${city}, ${state} ${propertyType.toLowerCase()} for you, then apply online today!`,
+				`See what people are saying about ${propertyName}! We value our residents' voices, and can’t wait for you to see our ${city} ${propertyType.toLowerCase()}s.`,
+				`The resident portal for ${propertyName} in ${city}, ${state} makes it easy for you to request maintenance service and pay your rent online.`,
+				`Reset your password for ${propertyName} ${propertyType}s in ${city}, ${state}. Please enter your User ID, and we will help you reset your account.`,
+				`Find your UserID for ${propertyName} ${propertyType}s in ${city}, ${state}. Please enter the email address you registered with when you moved in.`,
+				`This is the privacy policy statement for ${propertyName} ${propertyType}s in ${city}, ${state}. Please contact us with any questions you may have.`,
+				`At ${propertyName}, we actively work to increase the accessibility of our website and adhere to many of the available standards and guidelines.`,
+				`By accessing the website for ${propertyName}, you agree to be bound by the website Terms and Conditions of Use, all applicable laws, and regulations.`,
+				`This is a privacy notice for the ${propertyName} website that applies solely to all visitors, users, and others who reside in the State of California.`,
+				`${propertyName} ${propertyType}s in ${city}, ${state} offers virtual leasing, which lets you find a floor plan, apply, and sign a lease securely online.`,
+				`Find COVID-19 updates and read through ${propertyName} ${propertyType}s COVID-19 FAQ to learn more about the actions and leasing procedures we’re taking.`
 			];
 
 			for (let j = 0; j < descriptions.length; j++) {
