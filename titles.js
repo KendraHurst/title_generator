@@ -4,14 +4,14 @@ contentButton.addEventListener('click',generateContent);
 
 function generateContent() {
 
-	let propertyType = document.getElementById('property-type').value;
-	let propertyName = document.getElementById('property-name').value;
-	let city = document.getElementById('city').value;
-	let state = document.getElementById('state').value;
-	let zipCode = document.getElementById('zip-code').value;
-	let titleLength = document.getElementById('title-length').value;
-	let customTitle = document.getElementById('custom-title').value;
-	let contentDiv = document.getElementById('content');
+	const propertyType = document.getElementById('property-type').value;
+	const propertyName = document.getElementById('property-name').value;
+	const city = document.getElementById('city').value;
+	const state = document.getElementById('state').value;
+	const zipCode = document.getElementById('zip-code').value;
+	const titleLength = document.getElementById('title-length').value;
+	const customTitle = document.getElementById('custom-title').value;
+	const contentDiv = document.getElementById('content');
 
 	const titleEnds = [` ${propertyType}s | ${propertyType}s for Rent in `, ` | ${propertyType}s for Rent in `, ` | ${propertyType}s in `, ` | ${propertyType}s `];
 
@@ -161,7 +161,7 @@ function generateContent() {
 
 		if (!content.hasOwnProperty(key)) continue;
 
-			let oldDiv = document.getElementById(`${key}-content`);
+			const oldDiv = document.getElementById(`${key}-content`);
 
 
 			if (oldDiv) {
@@ -171,24 +171,24 @@ function generateContent() {
 				contentDiv.removeChild(oldDiv);
 			};
 
-			let newDiv = document.createElement('div');
+			const newDiv = document.createElement('div');
 			newDiv.setAttribute('id', `${key}-content`);
 			contentDiv.appendChild(newDiv);
 
-		let obj = content[key];
+		const obj = content[key];
 		for (prop in obj) {
 
 			if (!obj.hasOwnProperty(prop)) continue;
 
 			if (prop === 'page') {
 
-				let newH = document.createElement('h2')
+				const newH = document.createElement('h2')
 				newH.innerHTML = obj[prop];
 				newDiv.appendChild(newH);
 
 			} else if (prop.includes('title')) {
 
-				let newTitle = document.createElement('p');
+				const newTitle = document.createElement('p');
 
 					for (let i = 0; i < titleEnds.length; i++) {
 
@@ -208,7 +208,7 @@ function generateContent() {
 
 						} else {
 
-							let pageTitle = obj[prop].concat(bar, propertyName, titleEnds[i], city, ', ', state);
+							pageTitle = obj[prop].concat(bar, propertyName, titleEnds[i], city, ', ', state);
 
 							if (pageTitle.length <= titleLength) {
 								newTitle.innerHTML = `<b>${prop.toUpperCase()}: </b> ${pageTitle}`;
@@ -224,7 +224,7 @@ function generateContent() {
 
 			} else {
 
-				let newContent = document.createElement('p');
+				const newContent = document.createElement('p');
 				newContent.innerHTML = `<b>${prop.toUpperCase()}:</b> ${obj[prop]}`;
 				newDiv.appendChild(newContent);
 			};
