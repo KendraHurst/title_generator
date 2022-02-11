@@ -106,13 +106,13 @@
 
 			const content = {
 				homepage: {
-					name: 'Homepage',
+					page: 'Homepage',
 					title: '',
 					description: `${propertyName} ${propertyType}s in ${city}, ${state} ${zipCode}. Find your new ${propertyType.toLowerCase()} today! We offer a variety of ${propertyType.toLowerCase()} floor plans. Contact us today!`,
 					content: `Come home to ${propertyName} ${propertyType}s in ${city}, ${state}! Our ${propertyType.toLowerCase()}s are home to a fantastic location where endless opportunities for work and play collide. At our ${propertyType.toLowerCase()}s, you can choose from our ${propertyType.toLowerCase()}s that are complete with everything you need to always feel right at home. Here you’ll find yourself surrounded by an amenity-rich community and beautiful scenery. Our ${propertyType.toLowerCase()}s place you in the best destination to embrace ${city} living. This prime neighborhood will give you easier commutes and allow you to experience the perfect balance of modern city life and relaxation. Ready to step into your dream ${propertyType.toLowerCase()}? Apply now to ${propertyName} in ${city} today.`
 				},
 				gallery: {
-					name: 'Gallery',
+					page: 'Gallery',
 					title: 'Photos',
 					description: `Take a photo tour through your new ${city} ${propertyType.toLowerCase()}, and then schedule a tour today! See for yourself better living at ${propertyName}.`
 				}
@@ -123,7 +123,13 @@
 
 					let oldDiv = document.getElementById(`${key}-content`);
 
-					if (oldDiv) {contentDiv.removeChild(oldDiv)};
+
+					if (oldDiv) {
+						while (oldDiv.firstChild) {
+							oldDiv.removeChild(oldDiv.firstChild);
+						};
+						contentDiv.removeChild(oldDiv);
+					};
 
 					let newDiv = document.createElement('div');
 					newDiv.setAttribute('id', `${key}-content`);
@@ -131,8 +137,51 @@
 
 				let obj = content[key];
 				for (prop in obj) {
-					if (!obj.hasOwnProperty(prop)) continue;
-						console.log(`${prop}: ${obj[prop]}`);
+					if (!obj.hasOwnProperty(prop)) {continue};
+
+					if (prop === 'page') {
+
+						let newH = document.createElement('h2')
+						newH.innerHTML = obj[prop];
+						newDiv.appendChild(newH);
+
+					} else if (prop.includes('title')) {
+						let newTitle = document.createElement('p');
+
+							for (let i = 0; i < titleEnds.length; i++) {
+
+								let bar
+								if (!obj[prop]) {
+									bar = "";
+								} else {
+									bar = " | ";
+								};
+
+								let pageTitle = obj[prop].concat(bar, propertyName, titleEnds[i], city, ', ', state, ', ', zipCode);
+
+								if (pageTitle.length <= titleLength) {
+									newTitle.innerHTML = `<b>${prop.toUpperCase()}: </b> ${pageTitle}`;
+									break;
+								} else {
+
+									let pageTitle = obj[prop].concat(bar, propertyName, titleEnds[i], city, ', ', state);
+
+									if (pageTitle.length <= titleLength) {
+										newTitle.innerHTML = `<b>${prop.toUpperCase()}: </b> ${pageTitle}`;
+										break;
+									} else if (i === titleEnds.length - 1) {
+										newTitle.innerHTML = `<b>${prop.toUpperCase()}: </b>ERROR: inputs too long to create title shorter than max title length.`;
+										break;
+									};
+								};
+							};
+						newDiv.appendChild(newTitle);
+					} else {
+
+						let newContent = document.createElement('p');
+						newContent.innerHTML = `<b>${prop.toUpperCase()}:</b> ${obj[prop]}`;
+						newDiv.appendChild(newContent);
+					};
 				};
 			};
 
