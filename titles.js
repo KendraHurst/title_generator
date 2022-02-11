@@ -158,6 +158,7 @@ function generateContent() {
 	};
 
 	for (let key in content) {
+
 		if (!content.hasOwnProperty(key)) continue;
 
 			let oldDiv = document.getElementById(`${key}-content`);
@@ -176,6 +177,7 @@ function generateContent() {
 
 		let obj = content[key];
 		for (prop in obj) {
+
 			if (!obj.hasOwnProperty(prop)) {continue};
 
 			if (prop === 'page') {
@@ -185,6 +187,7 @@ function generateContent() {
 				newDiv.appendChild(newH);
 
 			} else if (prop.includes('title')) {
+
 				let newTitle = document.createElement('p');
 
 					for (let i = 0; i < titleEnds.length; i++) {
@@ -199,8 +202,10 @@ function generateContent() {
 						let pageTitle = obj[prop].concat(bar, propertyName, titleEnds[i], city, ', ', state, ', ', zipCode);
 
 						if (pageTitle.length <= titleLength) {
+
 							newTitle.innerHTML = `<b>${prop.toUpperCase()}: </b> ${pageTitle}`;
 							break;
+
 						} else {
 
 							let pageTitle = obj[prop].concat(bar, propertyName, titleEnds[i], city, ', ', state);
@@ -214,7 +219,9 @@ function generateContent() {
 							};
 						};
 					};
+
 				newDiv.appendChild(newTitle);
+
 			} else {
 
 				let newContent = document.createElement('p');
