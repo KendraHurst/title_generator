@@ -1,1 +1,1 @@
-This will be a basic title tag generator for apartment websites.
+This is a content generator for apartment websites.
