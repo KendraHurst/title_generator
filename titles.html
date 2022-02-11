@@ -100,6 +100,7 @@
 			let zipCode = document.getElementById('zip-code').value;
 			let titleLength = document.getElementById('title-length').value;
 			let customTitle = document.getElementById('custom-title').value;
+			let contentDiv = document.getElementById('content');
 
 			const titleEnds = [` ${propertyType}s | ${propertyType}s for Rent in `, ` | ${propertyType}s for Rent in `, ` | ${propertyType}s in `, ` | ${propertyType}s `];
 
@@ -119,6 +120,14 @@
 
 			for (let key in content) {
 				if (!content.hasOwnProperty(key)) continue;
+
+					let oldDiv = document.getElementById(`${key}-content`);
+
+					if (oldDiv) {contentDiv.removeChild(oldDiv)};
+
+					let newDiv = document.createElement('div');
+					newDiv.setAttribute('id', `${key}-content`);
+					contentDiv.appendChild(newDiv);
 
 				let obj = content[key];
 				for (prop in obj) {
