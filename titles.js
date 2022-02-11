@@ -1,4 +1,4 @@
-let contentButton = document.getElementById('content-button');
+const contentButton = document.getElementById('content-button');
 
 contentButton.addEventListener('click',generateContent);
 
