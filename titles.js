@@ -178,7 +178,7 @@ function generateContent() {
 		let obj = content[key];
 		for (prop in obj) {
 
-			if (!obj.hasOwnProperty(prop)) {continue};
+			if (!obj.hasOwnProperty(prop)) continue;
 
 			if (prop === 'page') {
 
