@@ -157,28 +157,38 @@ function generateContent() {
 		}
 	};
 
+	//loop through content array to generate HTML
+
 	for (let key in content) {
 
 		if (!content.hasOwnProperty(key)) continue;
 
-			const oldDiv = document.getElementById(`${key}-content`);
+		//removes HTML that was previously generated
+		const oldDiv = document.getElementById(`${key}-content`);
 
 
-			if (oldDiv) {
-				while (oldDiv.firstChild) {
-					oldDiv.removeChild(oldDiv.firstChild);
-				};
-				contentDiv.removeChild(oldDiv);
+		if (oldDiv) {
+			while (oldDiv.firstChild) {
+				oldDiv.removeChild(oldDiv.firstChild);
 			};
+			contentDiv.removeChild(oldDiv);
+		};
 
-			const newDiv = document.createElement('div');
-			newDiv.setAttribute('id', `${key}-content`);
-			contentDiv.appendChild(newDiv);
+		//adds div for each key in the content object
+
+		const newDiv = document.createElement('div');
+		newDiv.setAttribute('id', `${key}-content`);
+		contentDiv.appendChild(newDiv);
 
 		const obj = content[key];
+
+		//loop through each object inside content object to generate HTML
+
 		for (prop in obj) {
 
 			if (!obj.hasOwnProperty(prop)) continue;
+
+			//creates h2 from page type
 
 			if (prop === 'page') {
 
@@ -186,11 +196,15 @@ function generateContent() {
 				newH.innerHTML = obj[prop];
 				newDiv.appendChild(newH);
 
+			//generates title less than 65 characters long by looping through titleEnds array if the content is a title
+
 			} else if (prop.includes('title')) {
 
 				const newTitle = document.createElement('p');
 
 					for (let i = 0; i < titleEnds.length; i++) {
+
+						//if title value is empty leaves pipe out, otherwise adds pipe between title value and rest of title
 
 						let bar
 						if (!obj[prop]) {
@@ -221,6 +235,8 @@ function generateContent() {
 					};
 
 				newDiv.appendChild(newTitle);
+
+			//adds any other content types as a p
 
 			} else {
 
