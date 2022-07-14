@@ -41,7 +41,8 @@ function generateContent() {
 		"floor-plans": {
 			page: "Floor Plans",
 			title: "Floor Plans",
-			description: `At ${propertyName} ${propertyType}s in ${city}, ${state}, you can choose from our ${propertyType.toLowerCase()} floorplans that are complete with everything you need.`,
+			description: `At ${propertyName} ${propertyType}s in ${city}, ${state}, you can choose from our ${propertyType.toLowerCase()} floor plans that are complete with everything you need.`,
+			content: `${propertyName} offers a variety of ${propertyType.toLowerCase()}s. Our ${propertyType.toLowerCase()} floor plans are designed with your comfort and enjoyment in mind. Choose ${propertyName} as your new home and enjoy better living.`,
 		},
 		neighborhood: {
 			page: "Neighborhood",
