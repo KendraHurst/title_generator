@@ -13,10 +13,9 @@ function generateContent() {
 	const contentDiv = document.getElementById("content");
 
 	const titleEnds = [
-		` ${propertyType}s | ${propertyType}s for Rent in `,
-		` | ${propertyType}s for Rent in `,
-		` | ${propertyType}s in `,
-		` | ${propertyType}s `,
+		`${propertyType}s for Rent in ${city}, ${state} | `,
+		`${propertyType}s in ${city}, ${state} | `,
+		`${city} ${state} ${propertyType}s | `,
 	];
 
 	const content = {
@@ -192,26 +191,21 @@ function generateContent() {
 
 				for (let i = 0; i < titleEnds.length; i++) {
 
-					let pageTitle = obj[prop].concat(
+					let pageTitle = titleEnds[i].concat(
+						obj[prop],
 						propertyName,
-						titleEnds[i],
-						city,
-						", ",
-						state,
-						", ",
-						zipCode
+						" ",
+						propertyType,
+						"s"
 					);
 
 					if (pageTitle.length <= titleLength) {
 						newTitle.innerHTML = `<b>${prop.toUpperCase()}: </b> ${pageTitle}`;
 						break;
 					} else {
-						pageTitle = obj[prop].concat(
-							propertyName,
-							titleEnds[i],
-							city,
-							", ",
-							state
+						pageTitle = titleEnds[i].concat(
+							obj[prop],
+							propertyName
 						);
 
 						if (
