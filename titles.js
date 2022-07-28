@@ -28,137 +28,137 @@ function generateContent() {
 		},
 		gallery: {
 			page: "Gallery",
-			title: "Photos",
+			title: "Photos of ",
 			description: `Take a photo tour through your new ${city} ${propertyType.toLowerCase()}, and then schedule a tour today! See for yourself better living at ${propertyName}.`,
 			content: `Take a photo tour through ${propertyName} ${propertyType}s in ${city}. Imagine yourself stepping into a lifestyle centered on simplicity and comfort nestled in ${city}. Here, you will experience a thriving community that brings you everything you need to feel right at home. At our ${zipCode} ${propertyType.toLowerCase()}s, you can discover the ideal combination of personal and community amenities that come together to make home the ultimate destination. Our ${city} ${propertyType.toLowerCase()}s for rent feature fantastic local attractions and give you the world at your fingertips. Choose from our ${city} ${propertyType.toLowerCase()}s to discover the right space for you. Every highlight and feature of our ${propertyType.toLowerCase()}s for rent in ${city}, brings you the perfect blend of convenience and relaxation. Apply to ${propertyName} ${propertyType}s today!`,
 		},
 		amenities: {
 			page: "Amenities",
-			title: "Amenities",
+			title: "Amenities at ",
 			description: `Our ${city}, ${state} ${propertyType.toLowerCase()}s are outfitted with a variety of features. Check out the amenities that will be available to you at ${propertyName}.`,
 			content: `Our ${city}, ${state} ${propertyType.toLowerCase()}s bring you to the ultimate hub of work and play where you can dive into the local lifestyle while creating the day-to-day routine you have been waiting for. Here, you will be surrounded by an abundance of local attractions, activities, and entertainment. At the end of each day, you will love coming home to our ${propertyType.toLowerCase()}s near ${city} that have been fully designed with the resident in mind. No matter how you like to spend your free time, ${propertyName} in ${city} can help.`,
 		},
 		"floor-plans": {
 			page: "Floor Plans",
-			title: "Floor Plans",
+			title: "Floor Plans at ",
 			description: `At ${propertyName} ${propertyType}s in ${city}, ${state}, you can choose from our ${propertyType.toLowerCase()} floor plans that are complete with everything you need.`,
 			content: `${propertyName} offers a variety of ${propertyType.toLowerCase()}s. Our ${propertyType.toLowerCase()} floor plans are designed with your comfort and enjoyment in mind. Choose ${propertyName} as your new home and enjoy better living.`,
 		},
 		neighborhood: {
 			page: "Neighborhood",
-			title: "Neighborhood",
+			title: "Neighborhood of ",
 			description: `Experience the best ${city}, ${state} has to offer. Come home to ${propertyName} ${propertyType}s and come home to better living. Contact us today!`,
 			content: `Ready to take your lifestyle to the next level? Our ${city}, ${state} ${propertyType.toLowerCase()}s feature everything you look for in a place to call home. Find yourself embracing features that have been tailored to meet your needs. Our ${city} ${propertyType.toLowerCase()}s for rent are designed to be the hub of work and play. Imagine yourself diving into a local lifestyle that surrounds you with feelings of exploration, adventure, and relaxation. Experience ${propertyType.toLowerCase()}s for rent in ${city}, and experience better living. Apply to ${propertyName} ${propertyType}s today!`,
 		},
 		contact: {
 			page: "Contact",
-			title: "Contact Us",
+			title: "Contact ",
 			description: `Interested in learning more about ${propertyName}? Submit the contact form with your questions. Our leasing consultants will contact you soon.`,
 		},
 		"schedule-a-tour": {
 			page: "Schedule a Tour",
-			title: "Schedule a Tour",
-			"alt title": "Tours",
+			title: "Schedule a Tour of ",
+			"alt title": "Tours of ",
 			description: `Call or email us to schedule a tour of ${propertyName} today. Come see your new ${city} ${propertyType.toLowerCase()} and the community features in person.`,
 		},
 		"apply-online": {
 			page: "Apply Online",
-			title: "Apply Online",
-			"alt title": "Apply Now",
+			title: "Apply Online for ",
+			"alt title": "Apply Now for ",
 			description: `Apply now to ${propertyName}. Our ${city} ${propertyType.toLowerCase()}s provide you with everything that you need to be successful in your daily routine.`,
 		},
 		"virtual-tours": {
 			page: "Virtual Tours",
-			title: "Virtual Tours",
+			title: "Virtual Tours of ",
 			description: `Take a virtual ${propertyType.toLowerCase()} tour of ${propertyName} in ${city}, ${state}, and walk through one of our ${propertyType.toLowerCase()}s from the comfort of your own home!`,
 			content: `Take a virtual ${propertyType.toLowerCase()} tour of ${propertyName} in ${city}, ${state} and walk through one of our ${propertyType.toLowerCase()}s from the comfort of your own home! Our virtual tours highlights all the features of our stunning ${city} ${propertyType.toLowerCase()}s and amenities.`,
 		},
 		"pet-friendly": {
 			page: "Pet Friendly",
-			title: "Pet Friendly",
+			title: "Pet Policy at ",
 			description: `${propertyName} is not just a pet-friendly property, but a pet-enthusiastic property. Your pets will find just as inviting a home here as you will.`,
 		},
 		directions: {
 			page: "Directions",
-			title: "Directions",
+			title: "Directions to ",
 			description: `Stop by and visit ${propertyName} today! Just type in your location and follow the directions to your future ${city} ${propertyType.toLowerCase()} community.`,
 		},
 		faq: {
 			page: "FAQ",
-			title: "FAQ",
+			title: "FAQ for ",
 			description: `Check out some of the frequently asked questions about ${propertyName} in ${city}, ${state}, then contact us about your future ${propertyType.toLowerCase()} today!`,
 		},
 		availability: {
 			page: "Availability",
-			title: `${propertyType} Search`,
-			"alt title": "Availability",
+			title: `${propertyType} Search for `,
+			"alt title": "Availability at ",
 			description: `Search through the available ${propertyType.toLowerCase()}s at ${propertyName} and find the perfect ${city}, ${state} ${propertyType.toLowerCase()} for you, then apply online today!`,
 		},
 		reviews: {
 			page: "Reviews",
-			title: "Reviews",
+			title: "Reviews of ",
 			description: `See what people are saying about ${propertyName}! We value our residents' voices, and can’t wait for you to see our ${city} ${propertyType.toLowerCase()}s.`,
 		},
 		"resident-portal": {
 			page: "Resident Portal",
-			title: "Resident Portal",
-			"alt title": "Residents",
+			title: "Resident Portal for ",
+			"alt title": "Residents of ",
 			description: `The resident portal for ${propertyName} in ${city}, ${state} makes it easy for you to request maintenance service and pay your rent online.`,
 		},
 		"reset-password": {
 			page: "Reset Password",
-			title: "Reset Password",
-			"alt title": "Password",
+			title: "Reset Password for ",
+			"alt title": "Password for ",
 			description: `Reset your password for ${propertyName} ${propertyType}s in ${city}, ${state}. Please enter your User ID, and we will help you reset your account.`,
 		},
 		"find-userid": {
 			page: "Find UserID",
-			title: "Find UserID",
-			"alt title": "UserID",
+			title: "Find UserID for ",
+			"alt title": "UserID for ",
 			description: `Find your UserID for ${propertyName} ${propertyType}s in ${city}, ${state}. Please enter the email address you registered with when you moved in.`,
 		},
 		"privacy-policy": {
 			page: "Privacy Policy",
-			title: "Privacy Policy",
-			"alt title": "Privacy",
+			title: "Privacy Policy for ",
+			"alt title": "Privacy for ",
 			description: `This is the privacy policy statement for ${propertyName} ${propertyType}s in ${city}, ${state}. Please contact us with any questions you may have.`,
 		},
 		"accessibility-statement": {
 			page: "Accessibility Statement",
-			title: "Accessibility Statement",
-			"alt title": "Accessibility",
+			title: "Accessibility Statement for ",
+			"alt title": "Accessibility for ",
 			description: `At ${propertyName}, we actively work to increase the accessibility of our website and adhere to many of the available standards and guidelines.`,
 		},
 		terms: {
 			page: "Terms",
-			title: "Terms",
+			title: "Terms for ",
 			description: `By accessing the website for ${propertyName}, you agree to be bound by the website Terms and Conditions of Use, all applicable laws, and regulations.`,
 		},
 		"ca-privacy-notice": {
 			page: "CA Privacy Notice",
-			title: "CA Privacy Notice",
-			"alt title": "CA Privacy",
+			title: "CA Privacy Notice for ",
+			"alt title": "CA Privacy for ",
 			description: `This is a privacy notice for the ${propertyName} website that applies solely to all visitors, users, and others who reside in the State of California.`,
 		},
 		"virtual-leasing": {
 			page: "Virtual Leasing",
-			title: "Virtual Leasing",
+			title: "Virtual Leasing at ",
 			description: `${propertyName} ${propertyType}s in ${city}, ${state} offers virtual leasing, which lets you find a floor plan, apply, and sign a lease securely online.`,
 		},
 		"covid-19-faq": {
 			page: "Covid-19 FAQ",
-			title: "Covid-19 FAQ",
-			"alt title": "Covid FAQ",
+			title: "Covid-19 FAQ for ",
+			"alt title": "Covid FAQ for ",
 			description: `Find COVID-19 updates and read through ${propertyName} ${propertyType}s COVID-19 FAQ to learn more about the actions and leasing procedures we’re taking.`,
 		},
 		"urban-village": {
 			page: "Urban Village",
-			title: "Urban Village",
+			title: "Urban Village at ",
 			description: `As part of our commitment to delivering excellence in ${propertyType.toLowerCase()} living, we proudly offer the Urban Village Program in each of our communities.`,
 		},
 		custom: {
 			page: "Custom",
-			title: `${customTitle}`,
+			title: `${customTitle} `,
 		},
 	};
 
@@ -191,15 +191,8 @@ function generateContent() {
 				const newTitle = document.createElement("p");
 
 				for (let i = 0; i < titleEnds.length; i++) {
-					let bar;
-					if (!obj[prop]) {
-						bar = "";
-					} else {
-						bar = " | ";
-					}
 
 					let pageTitle = obj[prop].concat(
-						bar,
 						propertyName,
 						titleEnds[i],
 						city,
@@ -214,7 +207,6 @@ function generateContent() {
 						break;
 					} else {
 						pageTitle = obj[prop].concat(
-							bar,
 							propertyName,
 							titleEnds[i],
 							city,
