@@ -14,7 +14,7 @@ function generateContent() {
 	const titleEnds = [
 		`${propertyType}s for Rent in ${city}, ${state} | `,
 		`${propertyType}s in ${city}, ${state} | `,
-		`${city} ${state} ${propertyType}s | `,
+		`${city}, ${state} ${propertyType}s | `,
 	];
 
 	const content = {
