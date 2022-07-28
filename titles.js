@@ -7,7 +7,6 @@ function generateContent() {
 	const propertyName = document.getElementById("property-name").value;
 	const city = document.getElementById("city").value;
 	const state = document.getElementById("state").value;
-	const zipCode = document.getElementById("zip-code").value;
 	const titleLength = document.getElementById("title-length").value;
 	const customTitle = document.getElementById("custom-title").value;
 	const contentDiv = document.getElementById("content");
@@ -23,14 +22,14 @@ function generateContent() {
 		homepage: {
 			page: "Homepage",
 			title: "",
-			description: `${propertyName} ${propertyType}s in ${city}, ${state} ${zipCode}. Find your new ${propertyType.toLowerCase()} today! We offer a variety of ${propertyType.toLowerCase()} floor plans. Contact us today!`,
+			description: `${propertyName} ${propertyType}s in ${city}, ${state}. Find your new ${propertyType.toLowerCase()} today! We offer a variety of ${propertyType.toLowerCase()} floor plans. Contact us today!`,
 			content: `Come home to ${propertyName} ${propertyType}s in ${city}, ${state}! Our ${propertyType.toLowerCase()}s are home to a fantastic location where endless opportunities for work and play collide. At our ${propertyType.toLowerCase()}s, you can choose from our floor plans that are complete with everything you need to always feel right at home. Here you’ll find yourself surrounded by an amenity-rich community and beautiful scenery. Our ${propertyType.toLowerCase()}s place you in the best destination to embrace ${city} living. This prime neighborhood will give you easier commutes and allow you to experience the perfect balance of modern city life and relaxation. Ready to step into your dream ${propertyType.toLowerCase()}? Apply now to ${propertyName} in ${city} today.`,
 		},
 		gallery: {
 			page: "Gallery",
 			title: "Photos of ",
 			description: `Take a photo tour through your new ${city} ${propertyType.toLowerCase()}, and then schedule a tour today! See for yourself better living at ${propertyName}.`,
-			content: `Take a photo tour through ${propertyName} ${propertyType}s in ${city}. Imagine yourself stepping into a lifestyle centered on simplicity and comfort nestled in ${city}. Here, you will experience a thriving community that brings you everything you need to feel right at home. At our ${zipCode} ${propertyType.toLowerCase()}s, you can discover the ideal combination of personal and community amenities that come together to make home the ultimate destination. Our ${city} ${propertyType.toLowerCase()}s for rent feature fantastic local attractions and give you the world at your fingertips. Choose from our ${city} ${propertyType.toLowerCase()}s to discover the right space for you. Every highlight and feature of our ${propertyType.toLowerCase()}s for rent in ${city}, brings you the perfect blend of convenience and relaxation. Apply to ${propertyName} ${propertyType}s today!`,
+			content: `Take a photo tour through ${propertyName} ${propertyType}s in ${city}. Imagine yourself stepping into a lifestyle centered on simplicity and comfort nestled in ${city}. Here, you will experience a thriving community that brings you everything you need to feel right at home. At our ${propertyType.toLowerCase()}s, you can discover the ideal combination of personal and community amenities that come together to make home the ultimate destination. Our ${city} ${propertyType.toLowerCase()}s for rent feature fantastic local attractions and give you the world at your fingertips. Choose from our ${city} ${propertyType.toLowerCase()}s to discover the right space for you. Every highlight and feature of our ${propertyType.toLowerCase()}s for rent in ${city}, brings you the perfect blend of convenience and relaxation. Apply to ${propertyName} ${propertyType}s today!`,
 		},
 		amenities: {
 			page: "Amenities",
@@ -198,35 +197,19 @@ function generateContent() {
 						city,
 						", ",
 						state,
-						", ",
-						zipCode
 					);
 
 					if (pageTitle.length <= titleLength) {
+
 						newTitle.innerHTML = `<b>${prop.toUpperCase()}: </b> ${pageTitle}`;
 						break;
-					} else {
-						pageTitle = obj[prop].concat(
-							propertyName,
-							titleEnds[i],
-							city,
-							", ",
-							state
-						);
 
-						if (
-							pageTitle.length <=
-							titleLength
-						) {
-							newTitle.innerHTML = `<b>${prop.toUpperCase()}: </b> ${pageTitle}`;
-							break;
-						} else if (
-							i ===
-							titleEnds.length - 1
-						) {
-							newTitle.innerHTML = `<b>${prop.toUpperCase()}: </b>ERROR: inputs too long to create title shorter than max title length.`;
-							break;
-						}
+					} else if (
+						i ===
+						titleEnds.length - 1
+					) {
+						newTitle.innerHTML = `<b>${prop.toUpperCase()}: </b>ERROR: inputs too long to create title shorter than max title length.`;
+						break;
 					}
 				}
 
