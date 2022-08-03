@@ -8,7 +8,10 @@ function generateContent() {
 	const city = document.getElementById("city").value;
 	const state = document.getElementById("state").value;
 	const titleLength = document.getElementById("title-length").value;
-	const customTitle = document.getElementById("custom-title").value;
+	const customTitle1 = document.getElementById("custom-title-1").value;
+	const customTitle2 = document.getElementById("custom-title-2").value;
+	const customTitle3 = document.getElementById("custom-title-3").value;
+	const customTitle4 = document.getElementById("custom-title-4").value;
 	const contentDiv = document.getElementById("content");
 
 	const titleEnds = [
@@ -154,9 +157,21 @@ function generateContent() {
 			title: "Urban Village at ",
 			description: `As part of our commitment to delivering excellence in ${propertyType.toLowerCase()} living, we proudly offer the Urban Village Program in each of our communities.`,
 		},
-		custom: {
-			page: "Custom",
-			title: `${customTitle} `,
+		custom1: {
+			page: "Custom 1",
+			title: `${customTitle1} `,
+		},
+		custom2: {
+			page: "Custom 2",
+			title: `${customTitle2} `,
+		},
+		custom3: {
+			page: "Custom 3",
+			title: `${customTitle3} `,
+		},
+		custom4: {
+			page: "Custom 4",
+			title: `${customTitle4} `,
 		},
 	};
 
