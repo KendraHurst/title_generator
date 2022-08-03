@@ -160,18 +160,22 @@ function generateContent() {
 		custom1: {
 			page: "Custom 1",
 			title: `${customTitle1} `,
+			description: `${customTitle1} ${propertyName} in ${city}, ${state}. Contact us for more information today!`,
 		},
 		custom2: {
 			page: "Custom 2",
 			title: `${customTitle2} `,
+			description: `${customTitle2} ${propertyName} in ${city}, ${state}. Contact us for more information today!`,
 		},
 		custom3: {
 			page: "Custom 3",
 			title: `${customTitle3} `,
+			description: `${customTitle3} ${propertyName} in ${city}, ${state}. Contact us for more information today!`,
 		},
 		custom4: {
 			page: "Custom 4",
 			title: `${customTitle4} `,
+			description: `${customTitle4} ${propertyName} in ${city}, ${state}. Contact us for more information today!`,
 		},
 	};
 
