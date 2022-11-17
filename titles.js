@@ -7,6 +7,7 @@ function generateContent() {
 	const propertyName = document.getElementById("property-name").value;
 	const city = document.getElementById("city").value;
 	const state = document.getElementById("state").value;
+	const fullState = document.querySelector(`option[value=${state}]`).text;
 	const titleLength = document.getElementById("title-length").value;
 	const customTitle1 = document.getElementById("custom-title-1").value;
 	const customTitle2 = document.getElementById("custom-title-2").value;
@@ -25,7 +26,8 @@ function generateContent() {
 			page: "Homepage",
 			title: "",
 			description: `${propertyName} ${propertyType}s in ${city}, ${state}. Find your new ${propertyType.toLowerCase()} today! We offer a variety of ${propertyType.toLowerCase()} floor plans. Contact us today!`,
-			content: `Come home to ${propertyName} ${propertyType}s in ${city}, ${state}! Our ${propertyType.toLowerCase()}s are home to a fantastic location where endless opportunities for work and play collide. At our ${propertyType.toLowerCase()}s, you can choose from our floor plans that are complete with everything you need to always feel right at home. Here you’ll find yourself surrounded by an amenity-rich community and beautiful scenery. Our ${propertyType.toLowerCase()}s place you in the best destination to embrace ${city} living. This prime neighborhood will give you easier commutes and allow you to experience the perfect balance of modern city life and relaxation. Ready to step into your dream ${propertyType.toLowerCase()}? Apply now to ${propertyName} in ${city}, ${state} today.`,
+			//content: `Come home to ${propertyName} ${propertyType}s in ${city}, ${state}! Our ${propertyType.toLowerCase()}s are home to a fantastic location where endless opportunities for work and play collide. At our ${propertyType.toLowerCase()}s, you can choose from our floor plans that are complete with everything you need to always feel right at home. Here you’ll find yourself surrounded by an amenity-rich community and beautiful scenery. Our ${propertyType.toLowerCase()}s place you in the best destination to embrace ${city} living. This prime neighborhood will give you easier commutes and allow you to experience the perfect balance of modern city life and relaxation. Ready to step into your dream ${propertyType.toLowerCase()}? Apply now to ${propertyName} in ${city}, ${state} today.`,
+			content: `${propertyName} ${propertyType}s in ${city}, ${state}, is home to a fantastic location where endless opportunities for work and play collide. At our ${city} ${propertyType.toLowerCase()}s, you’ll find yourself surrounded by an amenity-rich community and beautiful scenery. Experience one of the best destinations for embracing all living in ${fullState} has to offer. Enjoy a prime neighborhood with easy commutes and the perfect balance of modern city life, relaxation, and opportunities for adventure. Ready to step into your dream lifestyle? Join our thriving ${propertyType.toLowerCase()} community today!`,
 		},
 		gallery: {
 			page: "Gallery",
